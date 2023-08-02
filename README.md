@@ -2,6 +2,8 @@
 
 ## Commands
 
+`npm run dev`
+
 `npm run start`
 
 `npm run test`
