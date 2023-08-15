@@ -60,3 +60,4 @@ yarn.lock
 # Ignore Cypress video and screenshot files
 cypress/videos/
 cypress/screenshots/
+~
