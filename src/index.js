@@ -1,7 +1,7 @@
 import express from 'express'
 import { API_PORT, API_URL } from './config/config.js'
 import userRouter from './router/user.route.js'
-import productsRouter from './router/products.route.js'
+import productsRouter from './router/product.route.js'
 import logger from './middlewares/logger.js'
 import bodyParser from 'body-parser'
 
