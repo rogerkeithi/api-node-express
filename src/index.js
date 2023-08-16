@@ -12,8 +12,6 @@ api.use(logger)
 
 api.use(bodyParser.json())
 
-testDbConnection();
-
 api.use('/user', userController)
 
 api.use('/product', productController)

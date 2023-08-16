@@ -1,15 +1,31 @@
-module.exports = (sequelize, Sequelize) => {
-    const Tutorial = sequelize.define("tutorial", {
-      title: {
-        type: Sequelize.STRING
+import { DataTypes, Model } from 'sequelize';
+import sequelize from '../../../config/database/datasource.js';
+
+class User extends Model {}
+
+User.init(
+  {
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
       },
-      description: {
-        type: Sequelize.STRING
-      },
-      published: {
-        type: Sequelize.BOOLEAN
-      }
-    });
-  
-    return Tutorial;
-  };
+    },
+  },
+  {
+    sequelize,
+    modelName: 'User',
+  }
+);
+
+export default User;

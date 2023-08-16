@@ -1,9 +1,8 @@
-const listUsers =  (req, res) => {
-    const users = [
-      {id: 1, name: 'Giusepe Catorta'},
-      {id: 2, name: 'Jalim Rabei'},
-      {id: 3, name: 'Sujiro Kimi Mame'},
-    ]
+import User from "../model/user.model.js";
+
+const listUsers =  async (req, res) => {
+    const users = await User.findAll();
     res.json(users);
   }
+
 export default listUsers

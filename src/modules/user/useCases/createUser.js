@@ -1,11 +1,15 @@
+import User from "../model/user.model.js";
+
 const createUser = (req, res) => {
-    const {name, age, email} = req.body;
+
+    const newUser = User.create(req.body);
+
     res.json({
         message: 'Usuário criado com sucesso!',
         data: {
-            name: name,
-            age: age,
-            email: email
+            firstName: newUser.firstName,
+            lastName: newUser.lastName,
+            email: newUser.email
         }
     });
 }
