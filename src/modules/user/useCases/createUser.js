@@ -1,16 +1,22 @@
-import User from "../model/user.model.js";
+import { PrismaClient } from '@prisma/client'
+import uuidGen from '../../../utils/uuidGen.js';
 
-const createUser = (req, res) => {
+const prisma = new PrismaClient()
+const createUser = async (req, res) => {
+    const newUser = req.body;
+    try{
+        const createdUser = await prisma.user.create({
+            data: {
+              id: uuidGen,
+              firstName: newUser.firstName,
+              lastName: newUser.lastName,
+              email: newUser.email,
+            },
+          })
+        res.json({message: 'User created successfuly!'});
+    }catch(e){
+        throw e;
+    }
 
-    const newUser = User.create(req.body);
-
-    res.json({
-        message: 'Usuário criado com sucesso!',
-        data: {
-            firstName: newUser.firstName,
-            lastName: newUser.lastName,
-            email: newUser.email
-        }
-    });
 }
 export default createUser 

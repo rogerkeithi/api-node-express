@@ -1,7 +1,8 @@
-import User from "../model/user.model.js";
+import { PrismaClient } from '@prisma/client'
 
+const prisma = new PrismaClient()
 const listUsers =  async (req, res) => {
-    const users = await User.findAll();
+    const users = await prisma.user.findMany();
     res.json(users);
   }
 

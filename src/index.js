@@ -4,7 +4,6 @@ import logger from './middlewares/logger.js'
 import bodyParser from 'body-parser'
 import userController from './modules/user/user.controller.js'
 import productController from './modules/product/product.controller.js'
-import testDbConnection from './config/database/datasource.js'
 
 const api = express()
 

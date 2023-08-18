@@ -1,8 +1,8 @@
 {
   "name": "api-node",
   "version": "1.0.0",
-  "engines":{
-    "node":"16.14.2"
+  "engines": {
+    "node": "16.14.2"
   },
   "description": "api node project",
   "main": "index.js",
@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon src/index.js",
-    "test": "test"
+    "test": "test",
+    "migrate:dev": "npx prisma migrate dev"
   },
   "keywords": [
     "api",
@@ -25,13 +26,15 @@
     "nodemon": "^3.0.1"
   },
   "dependencies": {
+    "@prisma/client": "^5.1.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "pg": "^8.11.2",
+    "pg-hstore": "^2.3.4",
+    "prisma": "^5.1.1",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
-    "sequelize":"^6.32.1",
-    "pg":"^8.11.2",
-    "pg-hstore":"^2.3.4"
+    "uuid": "^9.0.0"
   }
 }
